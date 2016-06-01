@@ -26,16 +26,20 @@ public class Main
 	public @ResponseBody String root() {
 		String webRequestUrl = "http://NA";
 		String webRequest;
+		System.out.println("Making Http request to " + webRequestUrl);
 		webRequest = "Http request to <i>" + webRequestUrl + "</i> succeeded: <b>";
 		webRequest += makeHttpRequest(webRequestUrl) + "</b><br><hr>";
 		webRequestUrl = "http://gturnquist-quoters.cfapps.io/api/random";
+		System.out.println("Making Http request to " + webRequestUrl);
 		webRequest += "Http request to <i>" + webRequestUrl + "</i> succeeded: <b>";
 		webRequest += makeHttpRequest(webRequestUrl) + "</b><br><hr>";
 
 		String ftpRequestUrl = "ftp.example.com";
+		System.out.println("Making FTP request to " + ftpRequestUrl);
 		String ftpRequest = "Ftp request to <i>" + ftpRequestUrl + "</i> succeeded: <b>";
 		ftpRequest += makeFtpRequest(ftpRequestUrl) + "</b><br><hr>";
 		ftpRequestUrl = "mirror.liquidtelecom.com";
+		System.out.println("Making FTP request to " + ftpRequestUrl);
 		ftpRequest += "Ftp request to <i>" + ftpRequestUrl + "</i> succeeded: <b>";
 		ftpRequest += makeFtpRequest(ftpRequestUrl) + "</b><br><hr>";
 		
@@ -89,4 +93,7 @@ public class Main
 		return result;
 	}
 
+	
+	
+	
 }

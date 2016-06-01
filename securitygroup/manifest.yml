@@ -1,0 +1,7 @@
+applications:
+- name: securitygroup
+  memory: 512M
+  # Add your name/initials to make the hostname unique
+  host: securitygroup
+  domain: local.pcfdev.io
+  path: target/securitygroup-0.0.1.jar
