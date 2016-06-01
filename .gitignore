@@ -9,6 +9,13 @@ securitygroup/.settings/
 securitygroup/target/
 securitygroup/output/
 securitygroup/debug/
+ups/.project
+ups/.classpath
+ups/.settings/
+ups/target/
+ups/output/
+ups/debug/
+ups/twittercreds.json
 
 # Package Files #
 *.war

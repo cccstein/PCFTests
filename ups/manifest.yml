@@ -1,0 +1,6 @@
+applications:
+- name: ups
+  memory: 512M
+  host: ups 
+  domain: local.pcfdev.io
+  path: target/ups-0.0.1.jar

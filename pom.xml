@@ -34,5 +34,6 @@
 
   <modules>
     <module>securitygroup</module>
+    <module>ups</module>
   </modules>
 </project>
