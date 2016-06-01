@@ -1,0 +1,19 @@
+*.class
+.project
+.settings
+.idea
+target/
+securitygroup/.project
+securitygroup/.classpath
+securitygroup/.settings/
+securitygroup/target/
+securitygroup/output/
+securitygroup/debug/
+
+# Package Files #
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
