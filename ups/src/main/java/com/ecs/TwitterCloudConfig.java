@@ -19,11 +19,10 @@ public class TwitterCloudConfig extends AbstractCloudConfig {
 	private String accessToken;
 	private String accessTokenSecret;
 
-	@Bean
 	public Twitter getTwitterInstance() {
-		//if (consumerKey == null) {
+		if (consumerKey == null) {
 			getCredentials();
-		//}
+		}
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 		cb.setDebugEnabled(true)
 				.setOAuthConsumerKey(consumerKey)
@@ -37,23 +36,27 @@ public class TwitterCloudConfig extends AbstractCloudConfig {
 	private void getCredentials() {
 		String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
 		if (VCAP_SERVICES != null) {
-			JSONObject obj = new JSONObject(VCAP_SERVICES);
-			JSONArray arr = obj.getJSONArray("user-provided");
-			JSONObject userProvided = arr.getJSONObject(0);
-			JSONObject creds = userProvided.getJSONObject("credentials");
-			consumerKey = creds.getString("consumerKey");
-			consumerSecret = creds.getString("consumerSecret");
-			accessToken = creds.getString("accessToken");
-			accessTokenSecret = creds.getString("accessTokenSecret");
+			try {
+				JSONObject obj = new JSONObject(VCAP_SERVICES);
+				JSONArray arr = obj.getJSONArray("user-provided");
+				JSONObject userProvided = arr.getJSONObject(0);
+				JSONObject creds = userProvided.getJSONObject("credentials");
+				consumerKey = creds.getString("consumerKey");
+				consumerSecret = creds.getString("consumerSecret");
+				accessToken = creds.getString("accessToken");
+				accessTokenSecret = creds.getString("accessTokenSecret");
+			} catch (Exception e) {
+				throw new CloudException("Twitter service credentials not found");
+			}
 
 		} else {
-			throw new CloudException("Twitter service not found");
+			throw new CloudException("Twitter service credentials not found");
 		}
-		
-	/*	System.out.println(consumerKey);
-		System.out.println(consumerSecret);
-		System.out.println(accessToken);
-		System.out.println(accessTokenSecret);*/
+
+		/*	System.out.println(consumerKey);
+			System.out.println(consumerSecret);
+			System.out.println(accessToken);
+			System.out.println(accessTokenSecret);*/
 	}
 
 }
