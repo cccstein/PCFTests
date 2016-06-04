@@ -11,10 +11,10 @@
 	</parent>
 
 	<groupId>com.emc</groupId>
-	<artifactId>securitygroup</artifactId>
+	<artifactId>micros</artifactId>
 	<version>0.0.1</version>
-	<name>securitygroup</name>
-        <packaging>war</packaging>
+	<name>micros</name>
+	<packaging>war</packaging>
 
 
 	<url>http://maven.apache.org</url>
@@ -32,11 +32,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>commons-net</groupId>
-			<artifactId>commons-net</artifactId>
-			<version>3.4</version>
 		</dependency>
 	</dependencies>
 

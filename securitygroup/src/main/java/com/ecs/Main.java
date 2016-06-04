@@ -24,12 +24,18 @@ public class Main
 
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody String root() {
-		String webRequestUrl = "http://NA";
+		// read URL as an environment variable
+		String webRequestUrl = System.getenv("MICROS_URL");
+		if (webRequestUrl == null) {
+			return "env var MICROS_URL:<url> is not set";
+		}
+		
 		String webRequest;
 		System.out.println("Making Http request to " + webRequestUrl);
 		webRequest = "Http request to <i>" + webRequestUrl + "</i> succeeded: <b>";
 		webRequest += makeHttpRequest(webRequestUrl) + "</b><br><hr>";
-		webRequestUrl = "http://gturnquist-quoters.cfapps.io/api/random";
+		
+/*		webRequestUrl = "http://gturnquist-quoters.cfapps.io/api/random";
 		System.out.println("Making Http request to " + webRequestUrl);
 		webRequest += "Http request to <i>" + webRequestUrl + "</i> succeeded: <b>";
 		webRequest += makeHttpRequest(webRequestUrl) + "</b><br><hr>";
@@ -42,16 +48,17 @@ public class Main
 		System.out.println("Making FTP request to " + ftpRequestUrl);
 		ftpRequest += "Ftp request to <i>" + ftpRequestUrl + "</i> succeeded: <b>";
 		ftpRequest += makeFtpRequest(ftpRequestUrl) + "</b><br><hr>";
+		*/
 		
 		
-		return webRequest + ftpRequest;
+		return webRequest;// + ftpRequest;
 	}
 
 	public boolean makeHttpRequest(String url) {
 		boolean result = false;
 		RestTemplate restTemplate = new RestTemplate();
 		try {
-			restTemplate.getForObject(url, Object.class);
+			restTemplate.getForObject(url, String.class);
 			result = true;
 		} catch (Exception e) {
 		}

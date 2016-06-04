@@ -1,0 +1,7 @@
+applications:
+- name: micros
+  memory: 512M
+  host: micros
+  path: target/micros-0.0.1.war
+  env:
+   JAVA_OPTS: -Djava.security.egd=file:///dev/urandom

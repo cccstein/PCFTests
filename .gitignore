@@ -18,6 +18,12 @@ ups/output/
 ups/debug/
 ups/twittercreds.json
 ups/win_twittercreds.json
+micros/.project
+micros/.classpath
+micros/.settings/
+micros/target/
+micros/output/
+micros/debug/
 
 # Package Files #
 *.war
