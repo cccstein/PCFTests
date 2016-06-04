@@ -16,6 +16,7 @@ ups/target/
 ups/output/
 ups/debug/
 ups/twittercreds.json
+ups/win_twittercreds.json
 
 # Package Files #
 *.war
