@@ -6,5 +6,5 @@ applications:
   path: target/securitygroup-0.0.1.war
   env:
    JAVA_OPTS: -Djava.security.egd=file:///dev/urandom
-   MICROS_URL: http://micros.local.pcfdev.io/service
+   MICROS_URL: http://micros.bravo.vlab.local/service
    
