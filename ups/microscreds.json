@@ -1,5 +1,1 @@
-{ 
- "uri":"http://micros.local.pcfdev.io/service",
- "consumerKey":"abcdefg",
- "consumerSecret":"123456"
-}
+"{ \"uri\":\"http://micros.bravo.vlab.local/service\", \"consumerKey\":\"abcdefg\", \"consumerSecret\":\"123456\" }"
