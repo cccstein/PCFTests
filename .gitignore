@@ -24,6 +24,12 @@ micros/.settings/
 micros/target/
 micros/output/
 micros/debug/
+*/.project
+*/.classpath
+*/.settings/
+*/target/
+*/output/
+*/debug/
 
 # Package Files #
 *.war

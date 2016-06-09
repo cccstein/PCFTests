@@ -1,0 +1,7 @@
+applications:
+- name: rconsumer
+  memory: 512M
+  host: rconsumer
+  path: target/rconsumer-0.0.1.war
+  env:
+   JAVA_OPTS: -Djava.security.egd=file:///dev/urandom

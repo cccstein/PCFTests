@@ -36,5 +36,7 @@
     <module>securitygroup</module>
     <module>ups</module>
     <module>micros</module>
+    <module>rsender</module>
+    <module>rconsumer</module>
   </modules>
 </project>
